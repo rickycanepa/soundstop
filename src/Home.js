@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import SoundList from './soundList';
+
 
 const Home = () => {
     const [sounds, setSounds] = useState([
@@ -8,19 +10,8 @@ const Home = () => {
     ])
     return ( 
         <div className="home">
-            <div className = "sounds">
-                <h2>Sounds</h2>
-            </div>
-            {sounds.map((sound) => (
-                <div className="sound-preview" key={ sounds.id }>
-                    <h2>{ sound.title }</h2>
-                    <p>Produced by: { sound.artist }</p>
-                    <p>Genre: { sound.genre }</p>
-                    <p>Key: { sound.key }</p>
-                    <p>BPM: { sound.bpm }</p>
-                </div>
-                
-            ))}
+            <h2>Sounds</h2>
+            <SoundList sounds={ sounds }/>
         </div>
      );
 }
