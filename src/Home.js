@@ -10,8 +10,8 @@ const Home = () => {
     ])
     return ( 
         <div className="home">
-            <h2>Sounds</h2>
-            <SoundList sounds={ sounds }/>
+            <SoundList sounds={ sounds } />
+            
         </div>
      );
 }
