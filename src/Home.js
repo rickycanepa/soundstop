@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SoundList from './soundList';
 
 
 const Home = () => {
-    const [sounds, setSounds] = useState([
-        { title: 'Synth Heaven', genre: 'Dance', bpm: 165, key: "C#m", artist: "Mike Dean", id: 1, userId: 1 },
-        { title: 'Dystopia', genre: 'Hip hop', bpm: 120, key: "D", artist: "Crankbeats", id: 2, userId: 2 },
-        { title: 'Block Gate', genre: 'Ambient', bpm: 65, key: "B", artist: "Brian Eno", id: 3, userId: 3 }
-    ])
+    const [sounds, setSounds] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8088/instrumentals')
+        .then(res => {
+            return res.json();
+        })
+        .then((data) => {
+            setSounds(data)
+        })
+    }, [])
     return ( 
         <div className="home">
             <SoundList sounds={ sounds } />
