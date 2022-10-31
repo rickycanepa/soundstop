@@ -5,7 +5,7 @@ const Navbar = () => {
             <div className="links">
                 <a href="/">Home</a>
                 <a href="/profile">Profile</a>
-                <a href="/search">Search</a>
+                <a href="/upload">Upload</a>
                 <a href="/signout" style={{
                     color: "white",
                     backgroundColor: "#f1356d",
